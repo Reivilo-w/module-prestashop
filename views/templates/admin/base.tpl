@@ -13,6 +13,14 @@
         </header>
 
         <div class="panel-body">
+            {if $has_error}
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="alert alert-danger">{l s='Une erreur est survenue' mod='tacos'}</p>
+                    </div>
+                </div>
+
+            {/if}
             <div class="row">
                 <div class="col-lg-12">
                     <h4>
@@ -34,7 +42,7 @@
 
                     <div class="form-group">
                         <div class="margin-form">
-                            <input type="text" name="commentary" id="commentary" value="{$commentary|escape:'htmlall':'UTF-8'}">
+                            <input maxlength="255" type="text" name="commentary" id="commentary" value="{$commentary|escape:'htmlall':'UTF-8'}">
                         </div>
                     </div>
                 </div>
