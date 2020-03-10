@@ -9,7 +9,6 @@ class AdminIndextacosController extends ModuleAdminController {
     }
 
     public function renderList() {
-        $has_error = false;
         $errors = [];
 
         $product_id = null;
@@ -22,13 +21,11 @@ class AdminIndextacosController extends ModuleAdminController {
             $is_enabled = Tools::getValue('is_enabled');
 
             if(!Validate::isInt($product_id)) {
-                $has_error = true;
                 $errors[] = 'L\'id du produit est invalide';
                 $product_id = null;
             }
 
             if(!Validate::isBool($is_enabled)) {
-                $has_error = true;
                 $errors[] = 'L\'état du produit est invalide';
                 $is_enabled = false;
             }
@@ -36,8 +33,7 @@ class AdminIndextacosController extends ModuleAdminController {
 
         $this->context->smarty->assign([
             'controllerLink' => $this->context->link->getAdminLink(Tools::getValue('controller')),
-            'has_error' => (bool)$has_error,
-            'errors' => $errors !== [] ? $errors : null,
+            'errors' => $errors,
             'product_id' => $product_id,
             'commentary' => $commentary,
             'is_enabled' => (bool)$is_enabled,
