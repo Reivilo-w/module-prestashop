@@ -13,13 +13,17 @@
         </header>
 
         <div class="panel-body">
-            {if $has_error}
+            {if $errors|@count gt 0 }
                 <div class="row">
                     <div class="col-lg-12">
-                        <p class="alert alert-danger">{l s='Une erreur est survenue' mod='tacos'}</p>
+                        <ul class="alert-danger alert">
+                            <h4 >{l s='Erreur' mod='tacos'}</h4>
+                            {section name=error loop=$errors}
+                                <li>{$errors[error]}</li>
+                            {/section}
+                        </ul>
                     </div>
                 </div>
-
             {/if}
             <div class="row">
                 <div class="col-lg-12">
