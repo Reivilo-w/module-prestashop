@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>tacos</name>
+	<displayName><![CDATA[Tacos mdr]]></displayName>
+	<version><![CDATA[1.0.0]]></version>
+	<description><![CDATA[Ceci est la description]]></description>
+	<author><![CDATA[Olivier Wysocinski]]></author>
+	<tab><![CDATA[administration]]></tab>
+	<confirmUninstall><![CDATA[Are u sure to niquer ta mère ?]]></confirmUninstall>
+	<is_configurable>1</is_configurable>
+	<need_instance>0</need_instance>
+	<limited_countries></limited_countries>
+</module>
